@@ -18,7 +18,7 @@ class Book:
     #     return Book(name, Book.TYPES[1], page_weight)
    
     @classmethod
-    def hardcover(cls, name, page_weight):
+    def hardcover(cls, name, page_weight): #Because you have access at the class ifself inside the method, that means that it is a perfect place to be creating new objects by using that class
         return cls(name, cls.TYPES[0], page_weight +100)
 
     @classmethod
