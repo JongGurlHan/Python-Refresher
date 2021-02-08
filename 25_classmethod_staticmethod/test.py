@@ -17,13 +17,14 @@ class Store:
 
     @classmethod
     def franchise(cls, store):
-        print(store.name+" - franchise")
+        return cls(store.name+" - franchise")
         
         # Return another store, with the same name as the argument's name, plus " - franchise"
 
     @staticmethod
-    def store_details(store):
-        return f"NAME:{store.name},  " 
+    def store_details(store):       
+        return '{}, total stock price: {}'.format(store.name, int(store.stock_price()))
+        
         # Return a string representing the argument
         # It should be in the format 'NAME, total stock price: TOTAL
 
@@ -34,3 +35,12 @@ store2.add_item("Keyboard", 160)
 
 Store.franchise(store) #returns a Store with name "Test - franchise"
 Store.franchise(store2) #returns a Store with name "Amazon - franchise"
+
+print(Store.store_details(store)) #returns "Test, total stock price: 0"
+print(Store.store_details(store2)) #returns "Amazon, total stock price: 160"
+
+#When completing the store_details method, you may need to convert the output of store.stock_price to an integer.
+# You can do this like so: int(store.stock_price)
+
+#The store_details method, which also takes in a store as arguemnt.
+#It should return a string representing the argument
